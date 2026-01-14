@@ -20,8 +20,8 @@ def main():
 
     # Configurar clientes y modelos
     clients = {
-        "OpenAI": openai_client,
         "Gemini": gemini,
+        "OpenAI": openai_client,
         "DeepSeek": deepseek,
         "Claude": anthropic_client,        
         "Groq": groq,
@@ -29,8 +29,8 @@ def main():
     }
 
     models = {
-        "OpenAI": "gpt-4o-mini",
         "Gemini": "gemini-flash-latest",
+        "OpenAI": "gpt-4o-mini",
         "DeepSeek": "deepseek-chat",
         "Claude": "claude-opus-4-5-20251101",
         "Groq": "llama-3.3-70b-versatile",
@@ -56,7 +56,7 @@ def main():
     responses_combined = organize_responses_with_enumerate(answers)
 
     # Paso 4: Crear prompt para el juez
-    judge_prompt = create_judge_prompt(question, responses_combined, len(competitors))
+    judge_prompt = create_judge_prompt(question, responses_combined, len(competitors), models)
 
     # Paso 5: Juzgar la competencia
     print("Juzgando la competencia...")

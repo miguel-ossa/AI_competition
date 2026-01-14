@@ -5,7 +5,8 @@ from typing import List, Dict, Optional
 def generate_challenge_question(client, model: str) -> str:
     """Genera una pregunta desafiante usando un modelo específico"""
     solicitud="Crea una pregunta desafiante que pueda hacer a varios LLMs para evaluar su inteligencia. " + \
-    "Céntrate en posibles problemáticas de la inteligencia artificial en el futuro, " + \
+    "Céntrate en posibles problemáticas de la revelación del descubrimiento que de conviven " + \
+    "inteligencias superiores no humanas interdimensionales entre nosotros, dirigiendo nuestras acciones, " + \
     "teniendo en cuenta todos los posibles aspectos relacionados, sin excluir ninguno."
     response =client.chat.completions.create(
         model=model,

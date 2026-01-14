@@ -1,8 +1,7 @@
 import json
 from openai import OpenAI
 
-def create_judge_prompt(question: str, responses: str, num_competitors: int) -> str:
-    """Truco 3: F-sstringds con triple comillas para prompts complejos"""
+def create_judge_prompt(question: str, responses: str, num_competitors: int, models: dict) -> str:
     juez = f"""Estás juzgando una competencia entre {num_competitors} competidores.
 A cada modelo se le ha dado esta pregunta:
 
@@ -20,7 +19,7 @@ Criterios de evaluación:
 3. Claridad de explicación
 4. Profundidad del análisis
 5. Utilidad práctica
-6. Se tienen en cuenta todos las posibles problemáticas relacionadas
+6. Se tienen en cuenta todas las posibles problemáticas relacionadas
 
 Responde SOLO en formato JSON con esta estructura exacta:
 {{
@@ -29,7 +28,8 @@ Responde SOLO en formato JSON con esta estructura exacta:
 }}
 
 Los números representan el ranking (1=mejor, 2=segundo mejor, etc.)
-NO reveles qué modelo es cuál en tu evaluación."""
+No reveles el nombre del modelo en tu evaluación.
+"""
     
     return juez
 
