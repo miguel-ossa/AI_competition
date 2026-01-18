@@ -10,6 +10,7 @@ anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 google_api_key = os.getenv("GOOGLE_API_KEY")
 deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
 groq_api_key = os.getenv("GROQ_API_KEY")
+perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
 
 print("Configuración de claves API:")
 print(f"OpenAI: {'Configurada' if openai_api_key else 'No configurada'}")
@@ -17,3 +18,5 @@ print(f"Anthropic: {'Configurada' if anthropic_api_key else 'No configurada'}")
 print(f"Google: {'Configurada' if google_api_key else 'No configurada'}")
 print(f"Deepseek: {'Configurada' if deepseek_api_key else 'No configurada'}")
 print(f"Groq: {'Configurada' if groq_api_key else 'No configurada'}")
+print(f"Perplexity: {'Configurada' if perplexity_api_key else 'No configurada'}")
+

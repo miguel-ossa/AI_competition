@@ -34,6 +34,11 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # Anthropic (Claude) OK
 anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
+# Perplexity
+perplexity = OpenAI(
+    api_key=os.getenv("PERPLEXITY_API_KEY"),
+    base_url="https://api.perplexity.ai"
+)
 # Ollama
 ollama = OpenAI(
     base_url="http://localhost:11434/v1",
@@ -97,6 +102,15 @@ if EXECUTE_MODEL_QUERIES:
     # Imprimir la lista de modelos
     for modelo in modelos_groq_disponibles:
         logging.info(f"Modelo Groq: {modelo}")
+
+    # Modelos no disponibles para GET
+    # logging.info("*" * 50)
+    # logging.info("Modelos Perplexity")
+    # logging.info("*" * 50)
+    # modelos_perplexity_disponibles = perplexity.models.list()
+    # # Imprimir la lista de modelos
+    # for modelo in modelos_perplexity_disponibles:
+    #     logging.info(f"Modelo Perplexity: {modelo}")
 
     logging.info("*" * 50)
     logging.info("Modelos Ollama")

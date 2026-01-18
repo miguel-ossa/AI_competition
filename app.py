@@ -25,6 +25,7 @@ def main():
         "DeepSeek": deepseek,
         "Claude": anthropic_client,        
         "Groq": groq,
+        "Perplexity": perplexity,
         "Ollama": ollama
     }
 
@@ -34,6 +35,7 @@ def main():
         "DeepSeek": "deepseek-chat",
         "Claude": "claude-opus-4-5-20251101",
         "Groq": "llama-3.3-70b-versatile",
+        "Perplexity": "sonar",
         "Ollama": "llama3.2"
     }
 

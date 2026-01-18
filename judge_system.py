@@ -23,7 +23,7 @@ Criterios de evaluación:
 
 Responde SOLO en formato JSON con esta estructura exacta:
 {{
-    "resultados": [1, 2, 3, 4, 5, 6],
+    "resultados": [1, 2, 3, 4, 5, 6, 7],
     "razonamiento": "Explicación breve del ranking"
 }}
 
@@ -54,7 +54,7 @@ def display_results(competitors: list, results_dict: dict):
     print("=" * 50)
     for index, result in enumerate(ranks):
         competitor = competitors[int(result) - 1]
-        medals = ["🥇", "🥈", "🥉", "4", "5", "6"]
+        medals = ["🥇", "🥈", "🥉", "4", "5", "6", "7"]
         print(f"{medals[index]} Top {index + 1}: {competitor}")
 
     print(f"\nRazonamiento del juez: {reasoning}")
